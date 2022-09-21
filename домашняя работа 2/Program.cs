@@ -1,25 +1,25 @@
-﻿// Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+﻿// Задача 13: Напишите программу, которая с помощью деления выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
-// 6 -> да
-// 7 -> да
-// 1 -> нет
+// 645 -> 5
 
+// 78 -> третьей цифры нет
+
+// 3267432979 -> 6
 {
-    Console.WriteLine("Введите число от 1 до 7");
+    Console.WriteLine("Введите число");
     int number = Convert.ToInt32(Console.ReadLine());
-    int [] weekday = {1, 2, 3, 4, 5};
-    int [] weekend = {6, 7};
-    if (weekday.Contains(number))
+    if (number < 100)
     {
-        Console.WriteLine("Нет, не выходной(");
-    }
-    else if (weekend.Contains(number))
-    {
-        Console.WriteLine("Да, выходной)");
+        Console.WriteLine("Третьей цыфры нет");
     }
     else
     {
-        Console.WriteLine("Неверный ввод");
+         while (number > 999)
+        {
+            number = number / 10;
+        }
+        int numberthree = number % 10;
+        Console.WriteLine("Третья цыфра " + numberthree);
     }
 }
 

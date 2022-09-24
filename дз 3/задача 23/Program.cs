@@ -14,8 +14,7 @@
     {
         for (int i = 1; i <= Math.Abs(number); i++)
         {
-            if (number > 0)
-            
+            if (number > 0)          
             {
                 Console.WriteLine($"{i} в кубе = {Math.Pow(i, 3)}");
             }

@@ -39,5 +39,49 @@ while (number > 0)
 Console.WriteLine($"Симма цифр числа {num} равна {sum}");
 }
 
-task27();
+// task27();
 
+// Задача 29: Напишите программу, которая задаёт массив из 8 случайных целых чисел 
+// и выводит отсортированный по модулю массив.
+
+// -2, 1, 7, 5, 19 -> [1, -2, 5, 7, 19]
+// 6, 1, -33 -> [1, 6, -33]
+void task29()
+{
+Random random = new Random();
+int size = 8;
+int[] numbers = new int[size];
+void fillarray (int[] numbers)
+{
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        numbers[i] = random.Next(-99, 100);
+        Console.Write(numbers[i] + "  ");
+    }
+Console.WriteLine();
+}
+fillarray(numbers);
+void sortnumbers()
+{
+for (int i = 0; i < size; i++)
+{
+int max = Math.Abs(numbers[i]);
+int imax = i;
+for (int j = i+1; j < size; j++)
+{
+    if (Math.Abs(numbers[j]) > max)
+    {
+        max = Math.Abs(numbers[j]);
+        
+        int temp = numbers[i];
+        numbers[i] = numbers[j];
+        numbers[j] = temp;
+    }    
+}
+Console.Write(numbers[i] + "  ");  
+}
+Console.WriteLine();
+}
+sortnumbers();
+}
+task29();

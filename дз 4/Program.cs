@@ -48,26 +48,38 @@ Console.WriteLine($"Симма цифр числа {num} равна {sum}");
 // 6, 1, -33 -> [1, 6, -33]
 void task29()
 {
-Random random = new Random();
 int size = 8;
 int[] numbers = new int[size];
+fillarray(numbers);
+Printarray(numbers);
+sortnumbers(numbers);
+Printarray(numbers);
+}
 void fillarray (int[] numbers)
 {
+    Random random = new Random();
     for (int i = 0; i < numbers.Length; i++)
     {
         numbers[i] = random.Next(-99, 100);
+    }
+}
+
+void Printarray(int[] numbers)
+{
+    for (int i = 0; i < numbers.Length; i++)
+    { 
         Console.Write(numbers[i] + "  ");
     }
 Console.WriteLine();
 }
-fillarray(numbers);
-void sortnumbers()
+    
+void sortnumbers(int[] numbers)
 {
-for (int i = 0; i < size; i++)
+for (int i = 0; i < numbers.Length; i++)
 {
 int max = Math.Abs(numbers[i]);
 int imax = i;
-for (int j = i+1; j < size; j++)
+for (int j = i+1; j < numbers.Length; j++)
 {
     if (Math.Abs(numbers[j]) > max)
     {
@@ -78,10 +90,8 @@ for (int j = i+1; j < size; j++)
         numbers[j] = temp;
     }    
 }
-Console.Write(numbers[i] + "  ");  
 }
-Console.WriteLine();
 }
-sortnumbers();
-}
-// task29();
+
+
+task29();

@@ -84,6 +84,7 @@ Console.WriteLine("Максимальное значение = " + FindMaxNumber
 Console.WriteLine("Минимальное значение = " + FindMinNumber(numbersDouble));
 Console.WriteLine($"Разница = {FindMaxNumber(numbersDouble) - FindMinNumber(numbersDouble)}");
 }
+
 // Task38();
 
 void FillarrayDouble (double[] numbersDouble)

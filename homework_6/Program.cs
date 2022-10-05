@@ -32,7 +32,7 @@ Console.WriteLine($"Прямые заданы уравнениями y = {k1}x +
 CrossPoint(b1, k1, b2, k2);
 }
 
-Task43();
+// Task43();
 
 int EnterDate()
 {

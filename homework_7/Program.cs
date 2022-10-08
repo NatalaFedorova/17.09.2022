@@ -14,7 +14,7 @@ void task47()
     FillTable(tableNumbers, -10, 10);
     PrintTable(tableNumbers);
 }
-task47();
+// task47();
 
 void FillTable(double[,] tableNumbers, int minnumber, int maxnumber)
 {
@@ -40,5 +40,44 @@ void PrintTable(double[,] tableNumbers)
             Console.Write(tableNumbers[i, j] + "\t");
         }
     Console.WriteLine();
+    }
+}
+
+// Задача 50: Напишите программу, которая на вход принимает индексы элемента в двумерном массиве, 
+// и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+
+// 17 -> такого числа в массиве нет
+
+void task50()
+{
+    // Задача 47. Создать двумерный массив
+    int row = 3;
+    int column = 6;
+    double[,] tableNumbers = new double [row, column];
+    FillTable(tableNumbers, -10, 10);
+    PrintTable(tableNumbers);
+    // Создать метод поиска элемента по индексу
+    CheckNumberInTable(tableNumbers);
+}
+// task50();
+
+void CheckNumberInTable(double[,] tableNumbers)
+{
+    Console.WriteLine("Ведите индексы элемента в массиве");
+    int number = Convert.ToInt32(Console.ReadLine());
+    int i = number / 10;
+    int j = number % 10;
+    if ( i >= tableNumbers.GetLength(0) || j >= tableNumbers.GetLength(1))
+    {
+        Console.WriteLine($"Элемента с индексом({i},{j}) нет в массиве");
+    }
+    else 
+    {
+        Console.WriteLine($"Число с индексами ({i},{j}) это {tableNumbers[i,j]}");
     }
 }

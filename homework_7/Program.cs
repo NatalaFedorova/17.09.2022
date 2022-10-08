@@ -37,7 +37,7 @@ void PrintTable(double[,] tableNumbers)
     {
         for(int j = 0; j < tableNumbers.GetLength(1); j++)
         {
-            Console.Write(tableNumbers[i, j] + "   ");
+            Console.Write(tableNumbers[i, j] + "\t");
         }
     Console.WriteLine();
     }

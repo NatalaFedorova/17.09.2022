@@ -62,7 +62,70 @@ void PrintTableInt(int[,] tableNumbers)
     }
 }
 
+// Задача 56: Задайте прямоугольный двумерный массив. 
+// Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+// Например, задан массив:
+
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 5 2 6 7
+
+// Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
 
 
+void Task56()
+{
+    int row = 4;
+    int column = 5;
+    int[,] numbers = new int[row, column];
+    FillTableInt(numbers);
+    PrintTableInt(numbers);
+    Console.WriteLine();
 
-Task54();
+    int [] sumRows = new int[row];
+    for(int i = 0; i < row; i++)
+    {
+        int sum = 0;
+        for(int j = 0; j < column; j++)
+        {
+            sum += numbers[i, j]; 
+        }
+        sumRows[i] = sum;
+    }
+    FindnumbersMin(sumRows);
+}
+
+void FindnumbersMin(int[] numbers)
+{
+    int indexMin = 0;
+    int min = numbers[indexMin];
+    for (int i = 0; i < numbers.Length; i++)
+    {
+            if (numbers[i] < min)
+            {
+                min = numbers[i];
+                indexMin = i;
+            }    
+    }
+    Console.WriteLine($"Наименьшая сумма элементов в {indexMin + 1} строке. Она равна {min}");
+}
+
+// Задача 58: Напишите программу, которая заполнит спирально массив 4 на 4.
+// Например, на выходе получается вот такой массив:
+// 01 02 03 04
+// 12 13 14 05
+// 11 16 15 06
+// 10 09 08 07
+
+void Task58()
+{
+    int row = 4;
+    int column = 4;
+    int[,] numbers = new int[row, column]; 
+    
+}
+
+// Task54();
+// Task56();
+Task58();

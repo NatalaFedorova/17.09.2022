@@ -121,25 +121,25 @@ void FindnumbersMin(int[] numbers)
 void Task58()
 {
     int row = 4;
-    int column = 4;
-    int[,] numbers = new int[row, column]; 
-    for(int k = 0; k < row; k++)
+    int column = row;
+    int[,] numbers = new int[row, column];
+    for(int k = 1; k < row; k++)
     {
-        numbers[0, k] = k;
-        numbers[k, 3] = 3 + k;
-        numbers[3, 3 - k] = 3 + 3 + k;
-        numbers[3 - k , 0] = 3 + 3 + 3 +k;
-        k = k + 1;
-        row = row -1;
-        numbers[1, k] = 3 + 3 + 3 + 3 + k;
-        numbers[k, 2] = 3 + 3 + 3 + 3 + 2 + k;
-        k = k + 1;
-        numbers[2, ]
-
-
-
-    }
+        numbers[0, k - 1] = 0*(row - 1) + k;
+        numbers[k - 1, row - 1] = 1*(row - 1) + k;
+        numbers[row - 1, row - k] = 2*(row - 1)+ k;
+        numbers[row - k, 0] = 3*(row - 1) + k;
+    }   
+    for (int k = 1; k < row / 2; k++)
+    {
+        numbers[1, k] = 4*(row - 1) + k;
+        numbers[k, (row - 1) - 1] = 4*(row - 1) + (row/2 - 1) + k;
+        numbers[(row - 1) - 1, (row - 1) - k] = 4*(row - 1) + 2*(row/2 - 1) + k;
+        numbers[(row - 1) - k, 1] = 4*(row - 1) + 3*(row/2 - 1) + k;
+    }  
+    PrintTableInt(numbers); 
 }
+
 
 // Task54();
 // Task56();

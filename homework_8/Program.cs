@@ -17,43 +17,24 @@ void Task54()
     FillTableInt(numbers);
     PrintTableInt(numbers);
     Console.WriteLine();
-    for (int j = 0; j < column; j++)
+    for (int i = 0; i < row; i++)
     {
-    int max = numbers[0, j];
-    int indexMax = 0;
-    for (int k = j +1; k < column; k++)
-    {
-        if (numbers[0, k] > max)
+        int indexMax = i;
+        for (int j = 0; j < column; j++)
         {
-        max = numbers[0, k];
-        indexMax = k;
-        (numbers[0, j], numbers[0, k]) = (numbers[0, k], numbers[0, j]);
+            int max = numbers[i, j];
+            for (int k = j +1; k < column; k++)
+            {
+                if (numbers[i, k] > max)
+                {
+                    max = numbers[i, k];
+                    indexMax = k;
+                    (numbers[i, j], numbers[i, k]) = (numbers[i, k], numbers[i, j]);
+                }
+            }
         }
     }
-    }
     PrintTableInt(numbers);
-
-}
-
-
-void sortnumbers(int[] numbers)
-{
-for (int i = 0; i < numbers.Length; i++)
-{
-int max = Math.Abs(numbers[i]);
-int imax = i;
-for (int j = i+1; j < numbers.Length; j++)
-{
-    if (Math.Abs(numbers[j]) > max)
-    {
-        max = Math.Abs(numbers[j]);
-        
-        int temp = numbers[i];
-        numbers[i] = numbers[j];
-        numbers[j] = temp;
-    }    
-}
-}
 }
 
 void FillTableInt(int[,] tableNumbers, int minnumber = 0, int maxnumber = 10)
@@ -81,13 +62,7 @@ void PrintTableInt(int[,] tableNumbers)
     }
 }
 
-void Printarray(int[] numbers)
-{
-    for (int i = 0; i < numbers.Length; i++)
-    { 
-        Console.Write(numbers[i] + "  ");
-    }
-Console.WriteLine();
-}
+
+
 
 Task54();

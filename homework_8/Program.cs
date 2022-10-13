@@ -130,12 +130,12 @@ void Task58()
         numbers[row - 1, row - k] = 2*(row - 1)+ k;
         numbers[row - k, 0] = 3*(row - 1) + k;
     }   
-    for (int k = 1; k < row / 2; k++)
+    for (int k = 1; k < row - 2; k++)
     {
         numbers[1, k] = 4*(row - 1) + k;
-        numbers[k, (row - 1) - 1] = 4*(row - 1) + (row/2 - 1) + k;
-        numbers[(row - 1) - 1, (row - 1) - k] = 4*(row - 1) + 2*(row/2 - 1) + k;
-        numbers[(row - 1) - k, 1] = 4*(row - 1) + 3*(row/2 - 1) + k;
+        numbers[k, (row - 1) - 1] = 4*(row - 1) + (row-2 - 1) + k;
+        numbers[(row - 1) - 1, (row - 1) - k] = 4*(row - 1) + 2*(row-2 - 1) + k;
+        numbers[(row - 1) - k, 1] = 4*(row - 1) + 3*(row-2 - 1) + k;
     }  
     PrintTableInt(numbers); 
 }
@@ -143,4 +143,4 @@ void Task58()
 
 // Task54();
 // Task56();
-// Task58();
+//  Task58();
